@@ -11,7 +11,8 @@ pipeline {
     }
 
     environment {
-        GITHUB_USERNAME = "${params.GITHUB_USERNAME}"
+        //GITHUB_USERNAME = "${params.GITHUB_USERNAME}"
+        //DOCKERHUB_USERNAME = "${params.GITHUB_USERNAME}"
 
         GITHUB_SCRIPT_URL = "https://github.com/${GITHUB_USERNAME}/kubernetes-anotherclass-sprint2.git"
         GITHUB_SOURCE_URL = "https://github.com/${GITHUB_USERNAME}/kubernetes-anotherclass-api-tester.git"
