@@ -14,9 +14,7 @@ pipeline {
   
 
     environment {
-        // ===== 강의 고정값 =====
-        CLASS_NUM = '2212'
-
+     
         // ===== 파라미터를 환경변수로 명시적으로 등록 =====
         DOCKERHUB_USERNAME = "${params.DOCKERHUB_USERNAME}"
         GITHUB_USERNAME    = "${params.GITHUB_USERNAME}"
@@ -25,6 +23,8 @@ pipeline {
         GITHUB_SCRIPT_URL = "https://github.com/${GITHUB_USERNAME}/kubernetes-anotherclass-sprint2.git"
         GITHUB_SOURCE_URL = "https://github.com/${GITHUB_USERNAME}/kubernetes-anotherclass-api-tester.git"
       
+        // ===== 강의 고정값 =====
+        CLASS_NUM = '2212'
 
     
        
