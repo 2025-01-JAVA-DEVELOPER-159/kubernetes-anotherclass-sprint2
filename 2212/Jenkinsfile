@@ -14,11 +14,12 @@ pipeline {
   
 
     environment {
-        // ===== 사용자별 변경 =====
-        //GITHUB_USERNAME   = "2025-01-JAVA-DEVELOPER-159"
-        //DOCKERHUB_USERNAME = "academyitwill"
-         // ===== 강의 고정값 =====
-         CLASS_NUM = '2212'
+        // ===== 강의 고정값 =====
+        CLASS_NUM = '2212'
+
+        // ===== 파라미터를 환경변수로 명시적으로 등록 =====
+        DOCKERHUB_USERNAME = "${params.DOCKERHUB_USERNAME}"
+        GITHUB_USERNAME    = "${params.GITHUB_USERNAME}"
 
          // ===== Git Repositories =====
         GITHUB_SCRIPT_URL = "https://github.com/${GITHUB_USERNAME}/kubernetes-anotherclass-sprint2.git"
