@@ -5,25 +5,22 @@ pipeline {
         gradle 'gradle-7.6.1'
         jdk 'jdk-17'
     }
-  parameters {
-        // DockerHub 사용자명 입력
-        string(name: 'DOCKERHUB_USERNAME',  defaultValue: 'academyitwill', description: 'DockerHub 사용자명을 입력하세요.')
-        // GitHub  사용자명 입력
-        string(name: 'GITHUB_USERNAME',  defaultValue: '2025-01-JAVA-DEVELOPER-159', description: 'GitHub  사용자명을 입력하세요.')
+    parameters {
+        string(name: 'DOCKERHUB_USERNAME', defaultValue: 'academyitwill')
+        string(name: 'GITHUB_USERNAME', defaultValue: '2025-01-JAVA-DEVELOPER-159')
     }
-  
 
     environment {
-         // ===== Git Repositories =====
-        GITHUB_SCRIPT_URL = "https://github.com/${params.GITHUB_USERNAME}/kubernetes-anotherclass-sprint2.git"
-        GITHUB_SOURCE_URL = "https://github.com/${params.GITHUB_USERNAME}/kubernetes-anotherclass-api-tester.git"
-      
-        // ===== 강의 고정값 =====
-        CLASS_NUM = '2212'
+        // ✅ params는 여기서 직접 쓰면 안 됨
+        GITHUB_USERNAME = "${params.GITHUB_USERNAME}"
 
-    
-       
+        // 이제 이 변수는 사용 가능
+        GITHUB_SCRIPT_URL = "https://github.com/${GITHUB_USERNAME}/kubernetes-anotherclass-sprint2.git"
+        GITHUB_SOURCE_URL = "https://github.com/${GITHUB_USERNAME}/kubernetes-anotherclass-api-tester.git"
+
+        CLASS_NUM = '2212'
     }
+
     
     stages {
 
