@@ -11,15 +11,14 @@ pipeline {
     }
 
     environment {
-        // ✅ params는 여기서 직접 쓰면 안 됨
         GITHUB_USERNAME = "${params.GITHUB_USERNAME}"
 
-        // 이제 이 변수는 사용 가능
         GITHUB_SCRIPT_URL = "https://github.com/${GITHUB_USERNAME}/kubernetes-anotherclass-sprint2.git"
         GITHUB_SOURCE_URL = "https://github.com/${GITHUB_USERNAME}/kubernetes-anotherclass-api-tester.git"
 
         CLASS_NUM = '2212'
     }
+
 
     
     stages {
